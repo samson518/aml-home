@@ -83,7 +83,7 @@ export function AmlSidebar() {
   return (
     <aside
       className={cn(
-        "flex flex-col bg-[#f5f5f5] border-r border-gray-200 transition-all duration-300",
+        "flex flex-col bg-white border-r border-gray-200 transition-all duration-300",
         collapsed ? "w-16" : "w-56"
       )}
     >

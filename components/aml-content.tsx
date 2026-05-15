@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import {
   Star,
   X,
@@ -51,6 +52,7 @@ const caseData: CaseItem[] = [
 ]
 
 export function AmlContent() {
+  const router = useRouter()
   const [activeTab, setActiveTab] = useState("suspicious")
   const [expandedCases, setExpandedCases] = useState<string[]>(["1"])
 
@@ -61,9 +63,9 @@ export function AmlContent() {
   }
 
   return (
-    <div className="flex-1 flex flex-col bg-[#fafafa] overflow-hidden">
+    <div className="flex-1 flex flex-col bg-white overflow-hidden">
       {/* Tab bar */}
-      <div className="flex items-center justify-between px-4 bg-white border-b border-gray-200">
+      <div className="flex items-center justify-between px-4 bg-[#f5f5f5] border-b border-gray-200">
         <div className="flex items-center">
           {tabs.map((tab) => (
             <button
@@ -140,6 +142,7 @@ export function AmlContent() {
                   {caseItem.subItems.map((subItem) => (
                     <div
                       key={subItem.id}
+                      onClick={() => router.push("/detail")}
                       className="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 cursor-pointer"
                     >
                       <div className="flex items-center gap-2 text-sm text-gray-700">
