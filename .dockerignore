@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+dist/
+
+# Git
+.git/
+.gitignore
+
+# v0 sandbox internals
+.snowflake/
+.v0-trash/
+.vercel/
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+
+# Env files (use docker-compose env or env_file instead)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Misc
+AGENTS.md
+deploy
+styles/

@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  aml-home:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aml-home:latest
+    container_name: aml-home
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - agent-networks      
+    # env_file:
+    #   - .env.local
+    # healthcheck:
+    #   test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+    #   interval: 30s
+    #   timeout: 5s
+    #   retries: 3
+    #   start_period: 10s
+
+networks:
+ agent-networks:
+  name: agent-networks
+  driver: bridge    
